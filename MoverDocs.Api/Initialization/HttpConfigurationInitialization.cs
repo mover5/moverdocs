@@ -41,10 +41,28 @@ namespace MoverDocs.Api.Initialization
         private void RegisterWebApiRoutes(HttpConfiguration httpConfiguration)
         {
             httpConfiguration.Routes.MapHttpRoute(
-                name: "ListProjects",
+                name: "ProjectCollectionRequests",
                 routeTemplate: "api/projects",
                 defaults: new { controller = "Projects" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get, HttpMethod.Post) });
+
+            httpConfiguration.Routes.MapHttpRoute(
+                name: "ProjectRequests",
+                routeTemplate: "api/projects/{projectName}",
+                defaults: new { controller = "Projects" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get, HttpMethod.Delete) });
+
+            httpConfiguration.Routes.MapHttpRoute(
+                name: "ApiVersionCollectionRequests",
+                routeTemplate: "api/projects/{projectName}/apiVersions",
+                defaults: new { controller = "ApiVersions" },
                 constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) });
+
+            httpConfiguration.Routes.MapHttpRoute(
+                name: "ApiVersionRequests",
+                routeTemplate: "api/projects/{projectName}/apiVersions/{apiVersionValue}",
+                defaults: new { controller = "ApiVersions" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get, HttpMethod.Put, HttpMethod.Delete) });
         }
     }
 }

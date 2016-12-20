@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
 
-namespace MoverDocs.Api.Models
+namespace MoverDocs.Api.Definitions
 {
-    public class Tag
+    public class License
     {
         [JsonProperty]
         public string Name { get; set; }
 
         [JsonProperty]
-        public string Description { get; set; }
+        public string Url { get; set; }
     }
 }

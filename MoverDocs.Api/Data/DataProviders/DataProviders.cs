@@ -22,9 +22,13 @@ namespace MoverDocs.Api.Data.DataProviders
 
         public ProjectDataProvider ProjectDataProvider { get; set; }
 
+        public ApiVersionDataProvider ApiVersionDataProvider { get; set; }
+
         public DataProviders()
         {
             this.ProjectDataProvider = new ProjectDataProvider(this.ConnectionString);
+
+            this.ApiVersionDataProvider = new ApiVersionDataProvider(this.ConnectionString);
         }
     }
 }

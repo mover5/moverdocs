@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace MoverDocs.Api.Models
+namespace MoverDocs.Api.Definitions
 {
     public class SecurityDefinition
     {

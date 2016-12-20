@@ -13,6 +13,22 @@ namespace MoverDocs.Api.ErrorHandling
 
         NotFound,
 
-        InvalidQueryString
+        InvalidQueryString,
+
+        ProjectNotFound,
+
+        ProjectNull,
+
+        ProjectMissingDisplayName,
+
+        ProjectMissingHostUrl,
+
+        ProjectDisplayNameAlreadyExists,
+
+        ApiVersionNotFound,
+
+        ApiVersionNull,
+
+        ApiVersionInvalid,
     }
 }

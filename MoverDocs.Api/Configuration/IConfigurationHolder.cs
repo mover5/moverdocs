@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using MoverDocs.Api.Data.DataProviders;
+﻿using MoverDocs.Api.Data.DataProviders;
 
 namespace MoverDocs.Api.Configuration
 {
@@ -18,6 +14,11 @@ namespace MoverDocs.Api.Configuration
         public static ProjectDataProvider GetProjectDataProvider(this IConfigurationHolder holder)
         {
             return holder.DataProviders.ProjectDataProvider;
+        }
+
+        public static ApiVersionDataProvider GetApiVersionDataProvider(this IConfigurationHolder holder)
+        {
+            return holder.DataProviders.ApiVersionDataProvider;
         }
     }
 }

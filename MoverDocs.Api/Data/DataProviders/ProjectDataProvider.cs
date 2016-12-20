@@ -45,5 +45,14 @@ namespace MoverDocs.Api.Data.DataProviders
                     rowKeyPrefix: Project.IdIndex.GetRowKeyPrefix(),
                     token: continuationToken);
         }
+
+        public Task<SegmentedResult<Project>> FindProjectsByDisplayName(string organizationId, string displayName, TableContinuationToken token = null)
+        {
+            return this.TableStorageDataProject
+                .FindRangeSegmented<Project>(
+                    partitionKey: Project.GetPartitionKey(organizationId),
+                    rowKeyPrefix: Project.NameIndex.GetRowKeyPrefix(displayName),
+                    token: token);
+        }
     }
 }
